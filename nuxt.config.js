@@ -1,6 +1,6 @@
 export default {
   storybook: {
-    // Options
+    stories: ['~/stories/**/*.stories.js']
   },
   /*
    ** Headers of the page

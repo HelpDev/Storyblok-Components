@@ -1,4 +1,4 @@
-import PageTitle from './PageTitle.vue';
+import PageTitle from '~/components/page/PageTitle.vue';
 
 export default {
   title: 'PageTitle',
