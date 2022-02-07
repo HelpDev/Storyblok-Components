@@ -5,6 +5,7 @@
   "author": "HelpDev",
   "scripts": {
     "start": "nuxt storybook",
+    "tailwind": "nuxt dev",
     "build": "nuxt storybook build"
   },
   "dependencies": {

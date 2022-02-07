@@ -6,14 +6,13 @@
 # install dependencies
 $ yarn
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# serve with hot reload at localhost:3003
+$ yarn start
+
+# serve with hot reload at localhost:3000/_tailwind
+$ yarn tailwind
 
 ```
-
-## Tailwind
-
-You will find your tailwind config viewer at `http://localhost:3000/_tailwind/`
 
 # Inspiration
 
