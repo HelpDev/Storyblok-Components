@@ -1,4 +1,7 @@
 export default {
+  storybook: {
+    // Options
+  },
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -33,8 +36,7 @@ export default {
     '~/plugins/story-components',
     '~/plugins/locale',
     '~/plugins/tailwind-components',
-    '~/plugins/composition-api.js',
-    '~/plugins/storyblok-rich-text-renderer.js'
+    '~/plugins/composition-api.js'
   ],
   /*
    ** Auto import components
