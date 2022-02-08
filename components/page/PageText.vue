@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`mx-auto flex justify-between py-8 sm:px-6 max-w-6xl
+    :class="`mx-auto flex justify-between py-8 px-1 sm:px-6 max-w-6xl
        ${
          blok.isSide
            ? 'flex-col md:flex-row'

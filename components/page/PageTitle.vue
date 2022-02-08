@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col text-center w-full">
     <div
-      :class="`pt-${9 - blok.h} pb-${5 - blok.h} w-full text-${
+      :class="`pt-${9 - blok.h} pb-${5 - blok.h} px-1 sm:px-6 w-full text-${
         blok.align
       } font-serif font-extrabold bg-opacity-90 z-20 text-${6 - blok.h}xl`"
     >
@@ -11,7 +11,7 @@
     <component
       :is="subtitleH"
       v-if="blok.subtitle"
-      :class="`w-full  mx-auto leading-relaxed text-base text-${blok.align}`"
+      :class="`w-full px-1 sm:px-6 mx-auto leading-relaxed text-base text-${blok.align}`"
     >
       {{ blok.subtitle }}
     </component>
