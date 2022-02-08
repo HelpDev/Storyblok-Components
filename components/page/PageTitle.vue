@@ -1,17 +1,20 @@
 <template>
   <div class="flex flex-col text-center w-full">
     <div
-      class="pt-8 pb-4 w-full text-center text-5xl font-serif  font-extrabold  bg-opacity-90 z-20"
+      :class="`pt-${9 - blok.h} pb-${5 - blok.h} w-full text-${
+        blok.align
+      } font-serif font-extrabold bg-opacity-90 z-20 text-${6 - blok.h}xl`"
     >
-      <h1>{{ blok.text }}</h1>
+      <component :is="titleH">{{ blok.text }}</component>
     </div>
 
-    <h2
+    <component
+      :is="subtitleH"
       v-if="blok.subtitle"
-      class="lg:w-2/3 mx-auto  leading-relaxed text-base"
+      :class="`w-full  mx-auto leading-relaxed text-base text-${blok.align}`"
     >
       {{ blok.subtitle }}
-    </h2>
+    </component>
   </div>
 </template>
 
@@ -21,6 +24,14 @@ export default {
     blok: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    titleH() {
+      return `h${this.blok.h}`;
+    },
+    subtitleH() {
+      return `h${this.blok.h + 1}`;
     }
   }
 };
