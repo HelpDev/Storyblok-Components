@@ -1,13 +1,11 @@
 <template>
   <div
-    :class="
-      `mx-auto flex justify-between py-8 sm:px-6 max-w-6xl
+    :class="`mx-auto flex justify-between py-8 sm:px-6 max-w-6xl
        ${
          blok.isSide
            ? 'flex-col md:flex-row'
            : 'flex-col-reverse md:flex-row-reverse'
-       }`
-    "
+       }`"
   >
     <div
       v-if="blok.image.filename"
@@ -16,9 +14,9 @@
     ></div>
 
     <p
-      :class="
-        `leading-8 font-medium  ${blok.image.filename ? 'max-w-3xl' : ''}`
-      "
+      :class="`leading-8 font-medium  ${
+        blok.image.filename ? 'max-w-3xl' : ''
+      }`"
       v-html="renderText(blok.text)"
     ></p>
   </div>
@@ -34,6 +32,10 @@ export default {
   },
   setup() {
     function renderText(text) {
+      if (!this?.$storyapi?.richTextResolver) {
+        return text;
+      }
+
       return text ? this.$storyapi.richTextResolver.render(text) : '';
     }
 
