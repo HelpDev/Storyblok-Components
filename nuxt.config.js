@@ -36,7 +36,8 @@ export default {
     '~/plugins/story-components',
     '~/plugins/locale',
     '~/plugins/tailwind-components',
-    '~/plugins/composition-api.js'
+    '~/plugins/composition-api.js',
+    '~/plugins/storyblok-design-system'
   ],
   /*
    ** Auto import components
