@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed right-3 bottom-5 z-50">
+  <div v-if="info && info.text" class="fixed right-3 bottom-5 z-50">
     <button
       @click="onClickButton"
       class="text-white px-4 w-auto h-10 bg-blue-700 rounded-full hover:bg-blue-800 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
@@ -23,7 +23,7 @@
       icon="info"
       :showCloseButton="true"
       :okButtonText="info.confirm"
-      >{{ settings.bank && info.text }}</t-dialog
+      >{{ info.text }}</t-dialog
     >
   </div>
 </template>
@@ -36,23 +36,10 @@ export default {
       return this.$store.state.settings.donations;
     }
   },
-  data() {
+  data(context) {
     return {
-      info: {}
+      info: context.$store.state.donations.info,
     };
-  },
-  async fetch() {
-    context.app.$storyapi
-      .get(`cdn/stories/`, {
-        starts_with: context.localePath('donations'),
-        version: 'published'
-      })
-      .then((donationsRefResponse) => {
-        const stories = donationsRefResponse.data.stories;
-        const info = stories[0].content;
-
-        this.info = info;
-      });
   },
   setup() {
     const showDialog = ref();
@@ -63,6 +50,7 @@ export default {
 
     return {
       showDialog,
+
       onClickButton
     };
   }
