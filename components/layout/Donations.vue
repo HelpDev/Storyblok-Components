@@ -41,6 +41,11 @@ export default {
       info: context.$store.state.donations.info,
     };
   },
+  watch: {
+    $route() {
+      this.info = this.$store.state.donations.info;
+    }
+  },
   setup() {
     const showDialog = ref();
 

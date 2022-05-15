@@ -106,6 +106,12 @@ export default {
       logo: context.$store.state.menu.logo
     };
   },
+  watch: {
+    $route() {
+      this.menu = this.$store.state.menu.items;
+      this.logo = this.$store.state.menu.logo;
+    }
+  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale);
