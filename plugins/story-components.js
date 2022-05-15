@@ -20,8 +20,8 @@ import TeamMember from '../components/team/TeamMember.vue';
 import Teaser from '../components/Teaser.vue';
 
 Vue.component('page', Page);
-Vue.component('content-project', Project);
-Vue.component('content-article', Article);
+Vue.component('project', Project);
+Vue.component('article', Article);
 Vue.component('teaser', Teaser);
 Vue.component('grid', Grid);
 Vue.component('feature', Feature);
