@@ -1,12 +1,12 @@
-import menuStore from '../store/menu';
+import * as menuStore from '../store/menu';
 
 export function registerStore(name, store, storeModule) {
-  const storeModule = {
+  const module = {
     namespaced: true,
     ...storeModule
   };
 
-  store.registerModule(name, storeModule, {
+  store.registerModule(name, module, {
     preserveState: !!store.state[name]
   });
 }

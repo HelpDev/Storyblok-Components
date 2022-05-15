@@ -46,7 +46,7 @@ export function loadPageContentFromApi(context, route, starts_with) {
 
 export function loadMenuFromApi(context) {
   if (context.store.state.menu.items.length === 0) {
-    context.app.$storyapi
+    return context.app.$storyapi
       .get(`cdn/stories/`, {
         starts_with: context.localePath('menu'),
         version: 'published'

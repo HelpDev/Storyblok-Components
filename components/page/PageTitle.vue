@@ -33,7 +33,7 @@ export default {
       return `h${this.blok.h}`;
     },
     subtitleH() {
-      return `h${this.blok.h + 1}`;
+      return `h${Number(this.blok.h) + 1}`;
     }
   }
 };
