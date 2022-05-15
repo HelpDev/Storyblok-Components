@@ -37,9 +37,11 @@ export default {
   components: {
     TranslateIcon
   },
-  setup(context) {
-    console.log(context.store.state.menu.items);
-    console.log(context.store.state.menu.logo);
+  data(context) {
+    console.log(context.$store.state.menu.items);
+    console.log(context.$store.state.menu.logo);
+  },
+  setup() {
     const menu = [
       // { link: 'projects', text: 'menu.projects' },
       { link: 'collaborate', text: 'menu.collaborate' },
