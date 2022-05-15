@@ -43,3 +43,19 @@ export function loadPageContentFromApi(context, route, starts_with) {
       }
     });
 }
+
+export async function loadMenuFromApi(context) {
+  if (context.store.state.menu.items.length === 0) {
+    let menuRefResponse = await context.app.$storyapi.get(`cdn/stories/`, {
+      starts_with: context.localePath('menu'),
+      version: 'published'
+    });
+
+    const stories = menuRefResponse.data?.stories;
+    const logo = stories && stories[0]?.content?.logo;
+    const items = stories && stories[0]?.content?.items;
+
+    context.store.commit('menu/setMenu', items);
+    context.store.commit('menu/setLogo', logo?.filename);
+  }
+}
