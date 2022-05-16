@@ -17,7 +17,7 @@
     "heroicons": "^1.0.6",
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1",
-    "simple-icons": "^6.21.0",
+    "simple-icons": "^4.19.0",
     "vue": "^2.6.14",
     "vue-tailwind": "^2.5.1",
     "vuex": "3.6.2"
