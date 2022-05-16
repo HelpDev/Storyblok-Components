@@ -3909,6 +3909,13 @@ autoprefixer@^9.6.1, autoprefixer@^9.8.6:
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
 
+axios@^0.21.1:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
+
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
@@ -6492,6 +6499,11 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@^1.14.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.0.tgz#06441868281c86d0dda4ad8bdaead2d02dca89d4"
+  integrity sha512-aExlJShTV4qOUOL7yF1U5tvLCB0xQuudbf6toyYA0E/acBNw71mvjFTnLaRp50aQaYocMR0a/RMMBIHeZnGyjQ==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -10843,6 +10855,11 @@ prepend-http@^1.0.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
   integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
+prettier@^2.5.1:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
+  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+
 pretty-bytes@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -11780,6 +11797,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rollup-plugin-mjs-entry@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-mjs-entry/-/rollup-plugin-mjs-entry-0.1.1.tgz#b3ab47e8d49ddb1916e36ba2480dc8a62a22d533"
+  integrity sha512-uii0Txyrn4YCgP++fypLqsT3LgO3Fx0gAZLZlWRSwKCuZ+bdSzAzdVbJFATmCHcBNlO61i65EgemOVdVQYONHA==
+
 rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
@@ -12357,6 +12379,42 @@ store2@^2.12.0:
   version "2.13.1"
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.13.1.tgz#fae7b5bb9d35fc53dc61cd262df3abb2f6e59022"
   integrity sha512-iJtHSGmNgAUx0b/MCS6ASGxb//hGrHHRgzvN+K5bvkBTN7A9RTpPSf1WSp+nPGvWCJ1jRnvY7MKnuqfoi3OEqg==
+
+storyblok-js-client@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-3.3.1.tgz#459eee7a581d5f3fc12156a428f1b3195201bb06"
+  integrity sha512-aVLYjAcXlsy4WuFLWJTci2Z5RTAxU5mW1jCZkNztXAqIsxlTqPfjYNGVjZXi0MJjvBcRHXUMN+6IpEnUEQ2azQ==
+  dependencies:
+    qs "^6.9.4"
+
+storyblok-js-client@^4.1.3:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.2.tgz#f93ae4822fd5710737a516d474a5dd40ee80b96c"
+  integrity sha512-86On+EyREZdbTcYTV+0dRQ1E4Gy0hPWs43MxK5VOv6DRwbf1A7haXq6dUL8nm9i5+xgOB0GLJW0f3B9CHbq4sQ==
+  dependencies:
+    prettier "^2.5.1"
+    rollup-plugin-mjs-entry "^0.1.1"
+
+storyblok-nuxt-routes@^1.3.0-beta.4:
+  version "1.3.0-beta.4"
+  resolved "https://registry.yarnpkg.com/storyblok-nuxt-routes/-/storyblok-nuxt-routes-1.3.0-beta.4.tgz#f4b656f6c485c3d583675aa07f7ff1509585ccff"
+  integrity sha512-wo94TA7LgDnRYgdMtT8leX3dDeSENDIVavleZSOsfldsJgQXXq4hLKLeIGAywfQNjn39hHTshTBytaGRUAMzrw==
+  dependencies:
+    storyblok-js-client "^4.1.3"
+
+storyblok-nuxt@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/storyblok-nuxt/-/storyblok-nuxt-1.3.1.tgz#7dc366b17d138d4086e008482b027d8ccdbd760a"
+  integrity sha512-vFSDgcwmua859hLwx1EarzhwSNZNBB9CxnuS2vZwva6pqWWvymrvLhzKEh1bPYQGPwcsPtq4j4ZlFgtiIfSN7Q==
+  dependencies:
+    axios "^0.21.1"
+    storyblok-js-client "^3.3.1"
+    storyblok-vue "^1.0.5"
+
+storyblok-vue@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/storyblok-vue/-/storyblok-vue-1.0.5.tgz#c9a82cc5be45c9c5af7d48477e69e207d60b5f38"
+  integrity sha512-xWnI7CY7DN+NBbG5PvdJ7cEDCjMSroIvppBfSYiM3HePoXiZSJ8X/CaLezJct2OxtchsArpbY/ZxghBseZCqtQ==
 
 stream-browserify@^2.0.1:
   version "2.0.2"
