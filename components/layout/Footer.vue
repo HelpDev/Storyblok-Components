@@ -32,7 +32,7 @@
             <a
               v-for="item in items"
               :key="item.icon"
-              :class="`bg-white shadow-lg font-normal items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 inline-block hover:fill-child-white hover:bg-social-${item.icon}`"
+              :class="`bg-white shadow-lg font-normal items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 inline-block transition-colors hover:fill-child-white hover:bg-social-${item.icon}`"
               target="_blank"
               :href="item.link.url || item.link.cached_url"
             >
@@ -55,7 +55,7 @@
               >
                 <img
                   class="h-10 w-auto mt-2"
-                  src="@/assets/images/helpdev.png"
+                  src="https://raw.githubusercontent.com/HelpDev/Storyblok-Components/main/assets/images/helpdev.png"
                   alt="Logo Helpdev"
                 />
               </a>
@@ -68,7 +68,7 @@
               >
                 <img
                   class="h-10 w-auto"
-                  src="@/assets/images/storyblok.png"
+                  src="https://raw.githubusercontent.com/HelpDev/Storyblok-Components/main/assets/images/storyblok.png"
                   alt="Logo Storyblok"
                 />
               </a>
