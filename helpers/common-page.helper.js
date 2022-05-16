@@ -86,6 +86,44 @@ export function loadMenuFromApi(context) {
     });
 }
 
+export function loadSocialFromApi(context) {
+  if (
+    context.store.state.social.locale === context.i18n.locale &&
+    context.store.state.social.items.length !== 0
+  ) {
+    return Promise.resolve(context.store.state.social.items);
+  }
+
+  return context.app.$storyapi
+    .get(`cdn/stories/`, {
+      starts_with: context.localePath('social'),
+      version: 'published'
+    })
+    .then((response) => {
+      const stories = response.data.stories;
+      const items = stories && stories[0].content.items;
+
+      context.store.commit('social/setSocial', items);
+
+      return items;
+    })
+    .catch((res) => {
+      if (!res.response) {
+        console.error(res);
+        context.error({
+          statusCode: 404,
+          message: 'Failed to receive content form api'
+        });
+      } else {
+        console.error(res.response.data);
+        context.error({
+          statusCode: res.response.status,
+          message: res.response.data
+        });
+      }
+    });
+}
+
 export function loadDonationsFromApi(context) {
   if (
     context.store.state.donations.locale === context.i18n.locale &&
@@ -128,6 +166,7 @@ export function loadDonationsFromApi(context) {
 export function loadPageContent(context, path) {
   return Promise.all([
     loadMenuFromApi(context),
+    loadSocialFromApi(context),
     loadDonationsFromApi(context)
   ]).then(([menu]) => {
     const item = menu.find(
