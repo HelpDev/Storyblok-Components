@@ -53,7 +53,7 @@ export function loadMenuFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/${context.localePath('menu')}`, {
+    .get(`cdn/stories/menu?language=${context.i18n.locale}`, {
       version: 'published'
     })
     .then((response) => {
@@ -92,7 +92,7 @@ export function loadSocialFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/${context.localePath('social')}`, {
+    .get(`cdn/stories/social?language=${context.i18n.locale}`, {
       version: 'published'
     })
     .then((response) => {
@@ -129,7 +129,7 @@ export function loadDonationsFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/${context.localePath('donations')}`, {
+    .get(`cdn/stories/donations?language=${context.i18n.locale}`, {
       version: 'published'
     })
     .then((response) => {
@@ -171,7 +171,7 @@ export function loadPageContent(context, path) {
 
     return loadPageContentFromApi(
       context,
-      `cdn/stories/${context.localePath(url)}`
+      `cdn/stories/${url}?language=${context.i18n.locale}`
     );
   });
 }
