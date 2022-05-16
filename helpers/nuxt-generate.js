@@ -3,7 +3,7 @@ const axios = require('axios');
 // From: https://www.storyblok.com/faq/how-to-generate-routes-for-nuxt-js-using-storyblok
 module.exports = function generateStoryblokUrls(token) {
   return {
-    routes: function(callback) {
+    routes: function (callback) {
       const per_page = 10;
       const version = 'published';
       let cache_version = 0;
@@ -16,7 +16,7 @@ module.exports = function generateStoryblokUrls(token) {
       // Load space and receive latest cache version key to improve performance
       axios
         .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
-        .then(space_res => {
+        .then((space_res) => {
           // timestamp of latest publish
           cache_version = space_res.data.space.version;
 
@@ -25,8 +25,8 @@ module.exports = function generateStoryblokUrls(token) {
             .get(
               `https://api.storyblok.com/v1/cdn/stories?token=${token}&version=${version}&per_page=${per_page}&page=${page}&cv=${cache_version}`
             )
-            .then(res => {
-              res.data.stories.forEach(story => {
+            .then((res) => {
+              res.data.stories.forEach((story) => {
                 if (story.full_slug != 'home') {
                   routes.push('/' + story.full_slug);
                 }
@@ -55,8 +55,8 @@ module.exports = function generateStoryblokUrls(token) {
                 .all(contentRequests)
                 .then(
                   axios.spread((...responses) => {
-                    responses.forEach(response => {
-                      response.data.stories.forEach(story => {
+                    responses.forEach((response) => {
+                      response.data.stories.forEach((story) => {
                         if (story.full_slug != 'home') {
                           routes.push('/' + story.full_slug);
                         }
