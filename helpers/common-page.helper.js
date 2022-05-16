@@ -159,6 +159,7 @@ export function loadDonationsFromApi(context) {
 }
 
 export function processListContent(path, response) {
+  debugger;
   const items = response.stories.map((story) => {
     const meta = story.content.meta && story.content.meta[0];
 
@@ -198,14 +199,18 @@ export function loadPageContent(context, path) {
     loadDonationsFromApi(context)
   ]).then(([menu]) => {
     const item = menu.find(
-      ({ link }) => link.url === `${path}/` || link.cached_url === `${path}/`
+      ({ link }) =>
+        link.url === `${path}/` ||
+        link.cached_url === `${path}/` ||
+        link.url === `/${context.i18n.locale}/${path}/` ||
+        link.cached_url === `/${context.i18n.locale}/${path}/`
     );
 
     // Is index page of directory
     if (item) {
       return loadPageContentFromApi(
         context,
-        `cdn/stories/?starts_with=${path}/&language=${context.i18n.locale}`
+        `cdn/stories/?starts_with=${path}&language=${context.i18n.locale}`
       ).then((response) => processListContent(path, response));
     }
 
