@@ -62,5 +62,11 @@ module.exports = {
     'plugins/**/*.js',
     'node_modules/vue-tailwind/dist/*.js',
     'nuxt.config.js'
+  ],
+  safelist: [
+    {
+      pattern: /bg-social-.+/,
+      variants: ['hover']
+    }
   ]
 };
