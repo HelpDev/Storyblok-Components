@@ -17,13 +17,12 @@ export function onStoryBridgeChangedToPublishedRefreshPage(context) {
   });
 }
 
-export function loadPageContentFromApi(context, route, starts_with) {
+export function loadPageContentFromApi(context, route) {
   const url = route;
 
   return context.app.$storyapi
     .get(url, {
-      version: 'published',
-      starts_with: starts_with
+      version: 'published'
     })
     .then((res) => {
       return res.data;
@@ -54,15 +53,13 @@ export function loadMenuFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/`, {
-      starts_with: context.localePath('menu'),
+    .get(`cdn/story/${context.localePath('menu')}`, {
       version: 'published'
     })
     .then((response) => {
-      const stories = response.data.stories;
-      const logo = stories && stories[0].content.logo;
-      const items = stories && stories[0].content.items;
-
+      const story = response.data.story;
+      const logo = story && story.content.logo;
+      const items = story && story.content.items;
       context.store.commit('menu/setLocale', context.i18n.locale);
       context.store.commit('menu/setMenu', items);
       context.store.commit('menu/setLogo', logo.filename);
@@ -95,13 +92,12 @@ export function loadSocialFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/`, {
-      starts_with: context.localePath('social'),
+    .get(`cdn/story/${context.localePath('social')}`, {
       version: 'published'
     })
     .then((response) => {
-      const stories = response.data.stories;
-      const items = stories && stories[0].content.items;
+      const story = response.data.story;
+      const items = story && story.content.items;
 
       context.store.commit('social/setSocial', items);
 
@@ -133,13 +129,12 @@ export function loadDonationsFromApi(context) {
   }
 
   return context.app.$storyapi
-    .get(`cdn/stories/`, {
-      starts_with: context.localePath('donations'),
+    .get(`cdn/story/${context.localePath('donations')}`, {
       version: 'published'
     })
     .then((response) => {
-      const stories = response.data.stories;
-      const content = stories && stories[0].content;
+      const story = response.data.story;
+      const content = story && story.content;
 
       context.store.commit('donations/setLocale', context.i18n.locale);
       context.store.commit('donations/setInfo', content);
@@ -176,7 +171,7 @@ export function loadPageContent(context, path) {
 
     return loadPageContentFromApi(
       context,
-      `cdn/stories/${context.localePath(url)}`
+      `cdn/story/${context.localePath(url)}`
     );
   });
 }
