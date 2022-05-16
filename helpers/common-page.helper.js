@@ -160,13 +160,13 @@ export function loadDonationsFromApi(context) {
 
 export function processListContent(path, response) {
   const items = response.stories.map((story) => {
-    const meta = story.meta && story.meta[0];
+    const meta = story.content.meta && story.content.meta[0];
 
     return {
       icon: 'globe',
       text: meta.description,
       title: meta.title,
-      page: story.full_slug,
+      page: `/${story.full_slug}`,
       component: 'feature-item'
     };
   });
