@@ -1,11 +1,6 @@
 import Vue from 'vue';
-import Article from '../components/Article.vue';
-import ArticleTeaser from '../components/ArticleTeaser.vue';
-import Feature from '../components/Feature.vue';
 import FeatureContainer from '../components/feature/FeatureContainer.vue';
 import FeatureItem from '../components/feature/FeatureItem.vue';
-import FeaturedArticles from '../components/FeaturedArticles.vue';
-import Grid from '../components/Grid.vue';
 import Page from '../components/Page.vue';
 import PageForm from '../components/page/PageForm.vue';
 import PageHero from '../components/page/PageHero.vue';
@@ -17,16 +12,9 @@ import Project from '../components/Project.vue';
 import SocialIcon from '../components/shared/SocialIcon';
 import TeamContainer from '../components/team/TeamContainer.vue';
 import TeamMember from '../components/team/TeamMember.vue';
-import Teaser from '../components/Teaser.vue';
 
 Vue.component('page', Page);
 Vue.component('project', Project);
-Vue.component('article', Article);
-Vue.component('teaser', Teaser);
-Vue.component('grid', Grid);
-Vue.component('feature', Feature);
-Vue.component('featured-articles', FeaturedArticles);
-Vue.component('article-teaser', ArticleTeaser);
 Vue.component('page-title', PageTitle);
 Vue.component('page-hero', PageHero);
 Vue.component('page-form', PageForm);

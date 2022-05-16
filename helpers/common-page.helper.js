@@ -158,6 +158,39 @@ export function loadDonationsFromApi(context) {
     });
 }
 
+export function processListContent(path, response) {
+  const items = response.stories.map((story) => {
+    const meta = story.meta && story.meta[0];
+
+    return {
+      icon: 'globe',
+      text: meta.description,
+      title: meta.title,
+      page: story.full_slug,
+      component: 'feature-item'
+    };
+  });
+
+  return {
+    cv: response.cv,
+    story: {
+      name: `${path}_list`,
+      content: {
+        body: [
+          {
+            body: items,
+            component: 'feature-container'
+          }
+        ],
+        component: 'page'
+      },
+      slug: `${path}/`,
+      full_slug: `${path}/`,
+      path: `${path}/`
+    }
+  };
+}
+
 export function loadPageContent(context, path) {
   return Promise.all([
     loadMenuFromApi(context),
@@ -167,11 +200,18 @@ export function loadPageContent(context, path) {
     const item = menu.find(
       ({ link }) => link.url === `${path}/` || link.cached_url === `${path}/`
     );
-    const url = item ? `${path}/` : path;
+
+    // Is index page of directory
+    if (item) {
+      return loadPageContentFromApi(
+        context,
+        `cdn/stories/?starts_with=${path}/&language=${context.i18n.locale}`
+      ).then((response) => processListContent(path, response));
+    }
 
     return loadPageContentFromApi(
       context,
-      `cdn/stories/${url}?language=${context.i18n.locale}`
+      `cdn/stories/${path}?language=${context.i18n.locale}`
     );
   });
 }
