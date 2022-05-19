@@ -61,6 +61,10 @@ module.exports = {
     'pages/**/*.vue',
     'plugins/**/*.js',
     'node_modules/vue-tailwind/dist/*.js',
+    './node_modules/components-helpdev-storyblok/components/**/*.vue',
+    './node_modules/components-helpdev-storyblok/layouts/**/*.vue',
+    './node_modules/components-helpdev-storyblok/pages/**/*.vue',
+    './node_modules/components-helpdev-storyblok/plugins/**/*.js',
     'nuxt.config.js'
   ],
   safelist: [
