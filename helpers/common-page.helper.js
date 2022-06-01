@@ -168,6 +168,7 @@ export function processListContent(path, response) {
       text: meta.description,
       title: meta.title,
       page: `/${story.full_slug}`,
+      link: meta.link,
       component: 'feature-item'
     };
   });
