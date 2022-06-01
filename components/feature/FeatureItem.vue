@@ -1,7 +1,7 @@
 <template>
   <a
     v-if="blok.link"
-    :href="blok.link"
+    :href="blok.link.url || blok.link.cached_url"
     target="_blank"
     :class="`flex flex-col items-center flex-start col-span-4 px-8 py-12 space-y-4 bg-gray-50 sm:rounded-xl transition-all shadow-md hover:shadow-lg hover:bg-gray-100`"
   >
