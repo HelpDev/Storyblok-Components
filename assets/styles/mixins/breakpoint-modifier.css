@@ -1,0 +1,6 @@
+/* We are using a class because nowadays you cannot have a custom property in a media query */
+@define-mixin breakpoint-modifier $breakpoint, $value {
+  body.breakpoint-$(breakpoint) &--$(value)\@$(breakpoint) {
+    @mixin-content;
+  }
+}
