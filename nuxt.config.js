@@ -27,7 +27,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/tailwind-extra.css'],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -35,7 +35,6 @@ export default {
   plugins: [
     '~/plugins/story-components',
     '~/plugins/locale',
-    '~/plugins/tailwind-components',
     '~/plugins/composition-api.js'
   ],
   /*
@@ -46,11 +45,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts'
-  ],
+  buildModules: ['@nuxtjs/google-fonts'],
   /*
    ** Nuxt.js modules
    */
